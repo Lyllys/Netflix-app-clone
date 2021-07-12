@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     iconeLogo: {
         marginTop: '2%',
         height: 35,
-        marginLeft: 10,
+        marginLeft: 20,
         zIndex: 1
         
     },
