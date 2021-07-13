@@ -6,20 +6,11 @@ const CardsFilmes = ({fotoPerfil}) => {
     return (
         <View style={styles.container} > 
               
-              
                 <TouchableOpacity  activeOpacity={0.6}>
                 <View >
                     <Image source={fotoPerfil} style={styles.img} />
                     </View>
                 </TouchableOpacity>
-               
-               
-                {/* <TouchableOpacity  activeOpacity={0.6}>
-                <View >
-                    <Image source={fotoPerfil} style={styles.img} />
-                    </View>
-                </TouchableOpacity> */}
-
           
         </View>
 

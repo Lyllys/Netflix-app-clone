@@ -1,135 +1,139 @@
 import React from "react";
 import styles from "./styles";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
-import Banner from '../../assets/banner.jpg';
-import { Entypo } from '@expo/vector-icons';
+import { View, Text, TouchableOpacity, ScrollView, FlatList } from "react-native";
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import CardsFilmes from "../../Componentes/CardsFilmes/CardsFilmes";
 import TextoCategoria from "../../Componentes/TextoCategoria/TextoCategoria";
 import Background from "../../Componentes/Background/Background";
-import img1 from '../../assets/FilmesESeries/img1.jpg';
-import img2 from '../../assets/FilmesESeries/img2.jpg';
-import img3 from '../../assets/FilmesESeries/img3.jpg';
-import img4 from '../../assets/FilmesESeries/img4.jpg';
-import img5 from '../../assets/FilmesESeries/img5.jpg';
-import img6 from '../../assets/FilmesESeries/img6.jpg';
-import img7 from '../../assets/FilmesESeries/img7.jpg';
-import lan1 from '../../assets/FilmesESeries/lan1.jpg';
-import lan2 from '../../assets/FilmesESeries/lan2.jpg';
-import lan3 from '../../assets/FilmesESeries/lan3.jpg';
-import lan4 from '../../assets/FilmesESeries/lan4.jpg';
-import lan5 from '../../assets/FilmesESeries/lan5.jpg';
-import lan6 from '../../assets/FilmesESeries/lan6.jpg';
-import lan7 from '../../assets/FilmesESeries/lan7.png';
-import alt1 from '../../assets/FilmesESeries/alt1.jpeg';
-import alt2 from '../../assets/FilmesESeries/alt2.jpg';
-import alt3 from '../../assets/FilmesESeries/alt3.jpg';
-import alt4 from '../../assets/FilmesESeries/alt4.jpg';
-import alt5 from '../../assets/FilmesESeries/alt5.jpg';
-import alt6 from '../../assets/FilmesESeries/alt6.jpg';
-import alt7 from '../../assets/FilmesESeries/alt7.jpeg';
-import asn1 from '../../assets/FilmesESeries/asn1.jpg';
-import asn2 from '../../assets/FilmesESeries/asn2.jpg';
-import asn3 from '../../assets/FilmesESeries/asn3.jpg';
-import asn4 from '../../assets/FilmesESeries/asn4.jpg';
-import asn5 from '../../assets/FilmesESeries/asn5.jpg';
-import asn6 from '../../assets/FilmesESeries/asn6.jpg';
-import asn7 from '../../assets/FilmesESeries/asn7.jpg';
+import Botao from "../../Componentes/Botao/Botao";
 
 const bannersBrasileiros = [
     {
-        foto: img1
+        id: 1,
+        foto: require('../../assets/FilmesESeries/img1.jpg')
     },
     {
-        foto: img2
+        id: 2,
+        foto: require('../../assets/FilmesESeries/img2.jpg')
     },
     {
-        foto: img3
+        id: 3,
+        foto: require('../../assets/FilmesESeries/img3.jpg')
     },
     {
-        foto: img4
+        id: 4,
+        foto: require('../../assets/FilmesESeries/img4.jpg')
     },
     {
-        foto: img5
+        id: 5,
+        foto: require('../../assets/FilmesESeries/img5.jpg')
     },
     {
-        foto: img6
+        id: 6,
+        foto: require('../../assets/FilmesESeries/img6.jpg')
     },
     {
-        foto: img7
+        id: 7,
+        foto: require('../../assets/FilmesESeries/img7.jpg')
     },
 ];
 
 const bannersLancamentos = [
     {
-        foto: lan1
+        id: 1,
+        foto: require('../../assets/FilmesESeries/lan1.jpg')
     },
     {
-        foto: lan2
+        id: 2,
+        foto: require('../../assets/FilmesESeries/lan2.jpg')
     },
     {
-        foto: lan3
+        id: 3,
+        foto: require('../../assets/FilmesESeries/lan3.jpg')
+
     },
     {
-        foto: lan4
+        id: 4,
+        foto: require('../../assets/FilmesESeries/lan4.jpg')
+
     },
     {
-        foto: lan5
+        id: 5,
+        foto: require('../../assets/FilmesESeries/lan5.jpg')
+
     },
     {
-        foto: lan6
+        id: 6,
+        foto: require('../../assets/FilmesESeries/lan6.jpg')
+
     },
     {
-        foto: lan7
+        id: 7,
+        foto: require('../../assets/FilmesESeries/lan7.png')
+
     },
 ];
 
 const bannersEmAlta = [
     {
-        foto: alt1
+        id: 1,
+        foto: require('../../assets/FilmesESeries/alt1.jpeg')
     },
     {
-        foto: alt2
+        id: 2,
+        foto: require('../../assets/FilmesESeries/alt2.jpg')
     },
     {
-        foto: alt3
+        id: 3,
+        foto: require('../../assets/FilmesESeries/alt3.jpg')
     },
     {
-        foto: alt4
+        id: 4,
+        foto: require('../../assets/FilmesESeries/alt4.jpg')
     },
     {
-        foto: alt5
+        id: 5,
+        foto: require('../../assets/FilmesESeries/alt5.jpg')
     },
     {
-        foto: alt6
+        id: 6,
+        foto: require('../../assets/FilmesESeries/alt6.jpg')
     },
     {
-        foto: alt7
+        id: 7,
+        foto: require('../../assets/FilmesESeries/alt7.jpeg')
     },
 ];
 
 const bannersAssistirNovamente = [
     {
-        foto: asn1
+        id: 1,
+        foto: require('../../assets/FilmesESeries/asn1.jpg')
     },
     {
-        foto: asn2
+        id: 2,
+        foto: require('../../assets/FilmesESeries/asn2.jpg')
     },
     {
-        foto: asn3
+        id: 3,
+        foto: require('../../assets/FilmesESeries/asn3.jpg')
     },
     {
-        foto: asn4
+        id: 4,
+        foto: require('../../assets/FilmesESeries/asn4.jpg')
     },
     {
-        foto: asn5
+        id: 5,
+        foto: require('../../assets/FilmesESeries/asn5.jpg')
     },
     {
-        foto: asn6
+        id: 6,
+        foto: require('../../assets/FilmesESeries/asn6.jpg')
     },
     {
-        foto: asn7
+        id: 7,
+        foto: require('../../assets/FilmesESeries/asn7.jpg')
     },
 ];
 
@@ -138,17 +142,14 @@ const Home = () => {
     return (
         <ScrollView contentContainerStyle={{ flexGrow: 1 }} nestedScrollEnabled>
 
-                <Background imgBanner={Banner} />
-            
+            <Background imgBanner={require('../../assets/banner.jpg')} />
+
             <View style={styles.container}>
                 <TouchableOpacity style={styles.containerMinhaLista} activeOpacity={0.7}>
                     <AntDesign name="plus" size={24} color="white" />
                     <Text style={styles.tituloMenu}>Minha lista</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.btn} activeOpacity={0.7}>
-                    <Entypo name="controller-play" size={24} color="black" />
-                    <Text style={styles.tituloBtn}>Assistir</Text>
-                </TouchableOpacity>
+                <Botao texto='Assistir' />
                 <TouchableOpacity style={styles.containerSaibaMais} activeOpacity={0.7}>
                     <Ionicons name="md-information-circle-outline" size={24} color="white" />
                     <Text style={styles.tituloMenu}>Saiba mais</Text>
@@ -158,66 +159,66 @@ const Home = () => {
 
             <TextoCategoria nome='Filmes e séries brasileiros' />
             <View >
-                <ScrollView
-                    horizontal
-                    contentContainerStyle={{ flexGrow: 1 }}
-                >
-                    <View style={styles.container}>
-
-                        {bannersBrasileiros.map((banner, indice) => <CardsFilmes
-                            key={indice}
-                            fotoPerfil={banner.foto}
-                        />)}
-                    </View>
-                </ScrollView>
+                <FlatList
+                    data={bannersBrasileiros}
+                    keyExtractor={item => item.id.toString()}
+                    horizontal={true}
+                    renderItem={({ item }) => {
+                        return (<View>
+                            <CardsFilmes fotoPerfil={item.foto} />
+                        </View>
+                        )
+                    }
+                    }
+                />
             </View>
 
             <TextoCategoria nome='Lançamentos' />
             <View >
-                <ScrollView
-                    horizontal
-                    contentContainerStyle={{ flexGrow: 1 }}
-                >
-                    <View style={styles.container}>
-
-                        {bannersLancamentos.map((banner, indice) => <CardsFilmes
-                            key={indice}
-                            fotoPerfil={banner.foto}
-                        />)}
-                    </View>
-                </ScrollView>
+                <FlatList
+                    data={bannersLancamentos}
+                    keyExtractor={item => item.id.toString()}
+                    horizontal={true}
+                    renderItem={({ item }) => {
+                        return (<View>
+                            <CardsFilmes fotoPerfil={item.foto} />
+                        </View>
+                        )
+                    }
+                    }
+                />
             </View>
 
             <TextoCategoria nome='Em alta' />
             <View >
-                <ScrollView
-                    horizontal
-                    contentContainerStyle={{ flexGrow: 1 }}
-                >
-                    <View style={styles.container}>
-
-                        {bannersEmAlta.map((banner, indice) => <CardsFilmes
-                            key={indice}
-                            fotoPerfil={banner.foto}
-                        />)}
-                    </View>
-                </ScrollView>
+                <FlatList
+                    data={bannersEmAlta}
+                    keyExtractor={item => item.id.toString()}
+                    horizontal={true}
+                    renderItem={({ item }) => {
+                        return (<View>
+                            <CardsFilmes fotoPerfil={item.foto} />
+                        </View>
+                        )
+                    }
+                    }
+                />
             </View>
 
             <TextoCategoria nome='Assistir novamente' />
             <View >
-                <ScrollView
-                    horizontal
-                    contentContainerStyle={{ flexGrow: 1 }}
-                >
-                    <View style={styles.container}>
-
-                        {bannersAssistirNovamente.map((banner, indice) => <CardsFilmes
-                            key={indice}
-                            fotoPerfil={banner.foto}
-                        />)}
-                    </View>
-                </ScrollView>
+                <FlatList
+                    data={bannersAssistirNovamente}
+                    keyExtractor={item => item.id.toString()}
+                    horizontal={true}
+                    renderItem={({ item }) => {
+                        return (<View>
+                            <CardsFilmes fotoPerfil={item.foto} />
+                        </View>
+                        )
+                    }
+                    }
+                />
             </View>
 
         </ScrollView>
